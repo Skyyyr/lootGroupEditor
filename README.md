@@ -36,8 +36,8 @@
 2. **Group Includes**: Copy and paste the file names without commas at the end.
 	- **Example**
 		```
-		item1
-		item2
-		item3
-		item4
+		item1.lua
+		item2.lua
+		item3.lua
+		item4.lua
 		```
