@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky's Loot Tool</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sky's Loot Tool</h1>
+        <button type="button" class="btn btn-primary" onclick="addLootItem()">Add Loot Item</button>
+        <button type="button" class="btn btn-danger" onclick="removeLootItem()">Remove Last Loot Item</button><br><br>
+
+        <h3>Total Weight: <span id="totalWeight">0%</span></h3>
+
+        <div id="lootItems">
+            <!-- Loot items will be added here -->
+        </div>
+
+        <label for="lootGroupName">Loot Group Name:</label>
+        <input type="text" id="lootGroupName" name="lootGroupName"><br><br>
+
+        <button type="button" class="btn btn-info" onclick="generateScript()">Display Lua Content</button>
+		<button type="button" class="btn btn-success" onclick="generateLuaFile()">Generate Lua File</button>
+
+        <pre id="generatedScript"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lua File Include Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Lua File Include Generator</h1>
+        <div class="form-group">
+            <label for="path">Path from groups/... to the item:</label>
+            <input type="text" class="form-control" id="path" placeholder="Enter path here">
+        </div>
+        <div class="form-group">
+            <label for="luaFiles">Lua File Names:</label>
+            <textarea class="form-control" id="luaFiles" rows="10" placeholder="Enter Lua file names here"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="generateIncludes()">Generate Includes</button>
+        <div id="output" class="mt-4"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function generateIncludes() {
+            var path = document.getElementById('path').value.trim();
+            var luaFilesTextArea = document.getElementById('luaFiles');
+            var luaFiles = luaFilesTextArea.value.trim().split('\n');
+
+            var output = document.getElementById('output');
+            output.innerHTML = '';
+
+            luaFiles.forEach(function(file) {
+                var includeStatement = 'includeFile("../custom_scripts/loot/groups/' + path + '/' + file.trim() + '")';
+                output.innerHTML += includeStatement + '<br>';
+            });
+        }
+    </script>
+</body>
+</html>
