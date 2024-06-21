@@ -1,5 +1,9 @@
 # Sky's Loot Tool
 
+## Github Pages
+1. If you don't want to install the repo on your machine you can use the github page for it instead.
+2. `https://skyyyr.github.io/lootGroupEditor/`
+
 ## Installation
 
 1. Clone the project repository to your local machine:
